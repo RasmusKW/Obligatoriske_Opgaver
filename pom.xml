@@ -44,6 +44,12 @@
             <scope>runtime</scope>
 <!-- Her skal man evt. tilføje <version></version>, an på hvilken Java version man har-->
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
