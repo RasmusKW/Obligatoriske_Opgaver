@@ -37,8 +37,8 @@
 <div th:if="${session.loginstatus == 'yes'}" class="row">
     <div class="column" style="background-color:#aaa">
         <h2>Add owner:</h2>
-        <form>
-            <input type="text" placeholder="name">
+        <form action="/owners/addOwner">
+            <input type="text" placeholder="name" name="name">
             <input type="submit">
         </form>
         <h2>Owners:</h2>

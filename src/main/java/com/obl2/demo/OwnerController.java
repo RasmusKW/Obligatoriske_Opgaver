@@ -4,6 +4,7 @@ import com.obl2.demo.model.Owner;
 import com.obl2.demo.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Set;
@@ -24,5 +25,6 @@ public class OwnerController {
         model.addAttribute("owners", owners);
         System.out.println(owners.size());
         return "owners/index";
-}
+    }
+
 }
