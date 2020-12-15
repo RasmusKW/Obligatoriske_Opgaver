@@ -1,8 +1,9 @@
 package com.obl2.demo.service.springdatajpa;
 
-import com.eikholm.jpademo10.model.Owner;
-import com.eikholm.jpademo10.repositories.OwnerRepository;
-import com.eikholm.jpademo10.service.OwnerService;
+
+import com.obl2.demo.model.Owner;
+import com.obl2.demo.repositories.OwnerRepository;
+import com.obl2.demo.service.OwnerService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;

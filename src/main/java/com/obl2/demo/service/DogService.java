@@ -1,6 +1,8 @@
 package com.obl2.demo.service;
 
-import com.eikholm.jpademo10.model.Dog;
+
+
+import com.obl2.demo.model.Dog;
 
 import java.util.List;
 import java.util.Set;

@@ -1,8 +1,9 @@
 package com.obl2.demo.service.springdatajpa;
 
-import com.eikholm.jpademo10.model.Dog;
-import com.eikholm.jpademo10.repositories.DogRepository;
-import com.eikholm.jpademo10.service.DogService;
+
+import com.obl2.demo.model.Dog;
+import com.obl2.demo.repositories.DogRepository;
+import com.obl2.demo.service.DogService;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
