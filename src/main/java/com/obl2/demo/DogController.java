@@ -1,9 +1,10 @@
 package com.obl2.demo;
 
-import com.eikholm.jpademo10.model.Dog;
-import com.eikholm.jpademo10.model.Owner;
-import com.eikholm.jpademo10.service.DogService;
-import com.eikholm.jpademo10.service.OwnerService;
+
+import com.obl2.demo.model.Dog;
+import com.obl2.demo.model.Owner;
+import com.obl2.demo.service.DogService;
+import com.obl2.demo.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
