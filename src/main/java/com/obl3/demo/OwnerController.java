@@ -1,16 +1,14 @@
-package com.obl2.demo;
+package com.obl3.demo;
 
-import com.obl2.demo.model.Dog;
-import com.obl2.demo.model.Owner;
-import com.obl2.demo.service.DogService;
-import com.obl2.demo.service.OwnerService;
+import com.obl3.demo.model.Owner;
+import com.obl3.demo.service.DogService;
+import com.obl3.demo.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Optional;
 import java.util.Set;
 
 @Controller
