@@ -15,7 +15,7 @@ public class Owner {
     private String firstName;  // SKAL være i camel-case (firstName)
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner") // evt. .DETACH
-    private Set<Dog> dogs;  // TODO: check om Hibernate kan garantere et objekt her
+    private Set<Dog> dogs;  //
 
     public Set<Dog> getDogs() {
         return dogs;

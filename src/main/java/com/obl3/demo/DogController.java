@@ -7,10 +7,7 @@ import com.obl3.demo.service.DogService;
 import com.obl3.demo.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashSet;
@@ -40,18 +37,22 @@ public class DogController {
     }
 
     @RequestMapping(value = "/dogs/adopt", method = RequestMethod.POST)
-    public String adopt(Owner owner, @RequestParam("dogid") String dogid){
-        Optional<Dog> dog = dogService.findById(Long.parseLong(dogid));
-        Optional<Owner> owner1 = ownerService.findById(owner.getId());
-        if(dog.isPresent() && owner1.isPresent()){
-            Owner o = owner1.get();
-            if(o.getDogs() == null){ // check dette
-                o.setDogs(new HashSet<>());
+    public String adopt(@ModelAttribute Owner owner, @RequestParam("dogid") String dogid)
+    {
+        System.out.println("id = "+owner.getId());
+        Optional<Dog> OptionalDog = dogService.findById(Long.parseLong(dogid));
+        Optional<Owner> optionalOwner = ownerService.findById(owner.getId());
+        if(OptionalDog.isPresent() && optionalOwner.isPresent()){
+            owner = optionalOwner.get();
+
+            if(owner.getDogs() == null){ // check dette
+                owner.setDogs(new HashSet<>());
             }
-            dog.get().setOwner(o);
-            o.getDogs().add(dog.get());
-            dogService.save(dog.get());
-            ownerService.save(o);
+
+            OptionalDog.get().setOwner(owner);
+            owner.getDogs().add(OptionalDog.get());
+            dogService.save(OptionalDog.get());
+            ownerService.save(owner);
         }
         return "redirect:/dogs";
     }
@@ -67,9 +68,9 @@ public class DogController {
     }
 
     @RequestMapping(value = "/dogs/addDog", method = RequestMethod.POST)
-    public String addDog(Dog dog, @RequestParam("owner") String ownerId){
+    public String addDog(Dog dog, @RequestParam("owner") long ownerId){
         System.out.println("/dogs/addDog kaldet med:  " + ownerId);
-        Optional<Owner> owner = ownerService.findById(Long.parseLong(ownerId));
+        Optional<Owner> owner = ownerService.findById(ownerId);
         if(owner.isPresent()){
             dog.setOwner(owner.get());
             owner.get().getDogs().add(dog);
